@@ -1,0 +1,16 @@
+<article class="chart box-shadow">
+    <header>
+        <h3 class="title">{{ chartTitle }}</h3>
+        <i class="material-icons-outlined icon">menu</i>
+    </header>
+    <div class="body">
+        <canvas baseChart width="700" height="350"
+            [datasets]="chartData"
+            [colors]="chartColors"
+            [labels]="chartLabels"
+            [legend]="chartLegend"
+            [chartType]="chartType"
+            [options]="chartOptions">
+        </canvas>
+    </div>
+</article>

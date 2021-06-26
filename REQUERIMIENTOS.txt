@@ -1,0 +1,113 @@
+/*-------------------------------------------
+    AJUSTES DASHBOARD - Mayo 04 de 2021 ( Martes ) 
+--------------------------------------------*/    
+
+    Estos Ajustes salieron de reunión con el cliente
+
+	1. Cambiar titulo a Dashboar: CONTROL ENTREGAS --> Ok
+	2. Cambiar color de fondo a uno institucional --> Ok
+	3. Filtro tienda mas ancho --> Ok
+	4. Agregar filtro estado --> Ok
+	5. Apilar tarjetas verticalmente --> Ok
+	6. Revisar tipografia --> Ok 
+	7. Cambiar titulo a Dashbaord CONTORL ENTREGAR --> Ok
+	8. Enlazar con pantalla que tiene DIEGO --> Ok
+	9. Agregar filtros de fecha --> Ok
+	10. Revisar colores de las graficas --> Ok 
+
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD Y PANTALLA ACCIONES - Mayo 06 de 2021 ( Jueves )
+---------------------------------------------------------------------*/    
+
+    Estos Ajustes salieron de reunión con el cliente
+
+    DASHBOARD
+        1. Al dar click en cada tarjeta, las graficas deben actualizarse 
+        2. Solo el icono de la tarjeta, debe enlazar a la siguiente pagina --> Ok
+        3. Titulo del dialog, NO MAYUSCULAS --> Ok
+        4. Colocar botón de aplicar y limpiar filtros --> Ok
+
+    PANTALLA ACCCIONES
+        1. Agregar boton o enlace para regresar al Dashbaord
+        2. Titulos de los acordeones NO MAYUSCULAS 
+        3. En pantalla de acciones, FECHA ENTREGA ahora sera FECHA ENTREGA COMPROMETIDA
+        4. Fecha de entrega debe ser mayor a la fecha ENTREGA COMPROMETIDA
+        5. Reprogramar fechas para SKU en lote
+        6. Los botones de guardar, si es posible, ubicar en la misma linea de cabecera de los acordeones
+        7. Cantidades alineadas a la derecha en las tablas
+        8. Cambiar titulo de pantalla de acciones a GESTIONAR NOVEDAD
+        9. Aplicar accion por lote para fecha y causal de reprogramación
+        10. Colocar formulario para cambio de dirección en la pamtalla de acciones 
+
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD - Mayo 10 de 2021 ( Jueves )
+---------------------------------------------------------------------*/    
+
+    1. Estados ahora serán: --> Ok
+        - Creado 
+        - Gestionado
+        - Cancelado
+
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD - Mayo 19 de 2021 ( Miercoles )
+---------------------------------------------------------------------*/    
+
+	PANTALLA ACCIONES - APP
+
+    1. Pantalla de Acordeones
+	    - Para el primer item ( cambio de direccion )
+		    - Se agregan 3 nuevos parametros al llamar a un dinamico ( PAQUETE )
+			    - IdDireccion, latitud, longitud
+		- llamar a nuevo dinamico llamado NBLINSORUN
+		
+		
+	DASHBOARD
+	
+	- En la ventana modal hacer los siguientes cambios
+		- Select de estado ya no va --> Ok
+		- Select tipo de novedad ahora va del lado izquierdo --> Ok
+		- Al seleccionar como tipo de novedad ( Reprogramacion ) --> Ok
+		  se debe habilitar un nuevo select llamado causales --> Ok
+		- http://10.23.14.94:8995/Servicios/AccesoDatos_1.0.0/api/SGL/FncStoreProcedureTagDt -- > Ok
+		- {"Tag":"-","Procedimiento":"PKG_REPROGRAMACION.PRC_GET_CAUSALES","Parametros":[{"Nombre":"P_SALIDA","Tipo":"c","IntValor":0,"DouValor":0,"StringValor":"","DateValor":"","Entrada":false}]}
+	
+		  
+
+        PARAMETROS AL GUARDAR NOVEDAD 
+        USANDO EL METHODO QUE REVISE CON HERNAN MANDAR ESTOS 3 PARAMETROS
+        VA NO CON GET SINO CON SET PORQUE ES PARA GUARDAR
+          idNovedad 
+          sticker DE LA NOTA PEDIDO consultado con el GET
+          idCausal 
+          EN EL SET SE VAN EN UN SOLO PARAMETRO SERPARADOS POR #
+          
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD - Mayo 24 de 2021 ( Lunes )
+---------------------------------------------------------------------*/    
+
+    - Filtros Card fecha fin debe ser superior a fecha inicio --> Ok
+    - Filtros Card fecha fin, debe ser obligatorio si fecha inicio tiene valor --> Ok
+
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD - Mayo 25 de 2021 ( Martes )
+---------------------------------------------------------------------*/    
+
+    1. Cambiar nombre a paquete de servicio de guardar reprogramación 
+        desde la modal ... revisar eso con cristian ...solo cambia el nombre del 
+        procedimiento
+
+    2. Agregar tooltip a boton de crear novedad 
+        y al de la escoba de limpiar filtro  --> Ok
+
+
+/*--------------------------------------------------------------------
+    AJUSTES DASHBOARD - Mayo 26 de 2021 ( Miercoles )
+---------------------------------------------------------------------*/    
+        
+    PUNTO 8
+
+    Nota para mandar correo a Ruben
+    - No se va a abordar el punto 8, pero si es necesario hacerlo se requiere
+    primero dimensionar las tareas
+
+    

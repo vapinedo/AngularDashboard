@@ -1,0 +1,79 @@
+<section class="box-shadow animate__animated animate__fadeIn animate_faster">
+
+    <header>
+        <h2 class="sectionTitle">{{ secionTitle }}</h2>
+        <button mat-raised-button class="btnPrimaryOnHover" (click)="onGoBack()">
+            <i class="material-icons-outlined">keyboard_arrow_left</i>
+            Atrás
+        </button>
+    </header>   
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <article class="row">
+            <mat-form-field appearance="outline" class="col-md-4">
+                <mat-label>Buscar nota pedido</mat-label>
+                <input 
+                    matInput 
+                    #inputNota
+                    type="text" 
+                    cdkFocusInitial
+                    autocomplete="off"
+                    [readonly]="iconSpin"
+                    [formControl]="buscarNota" 
+                    placeholder="Ej: 70-1037607"
+                    (keyup.enter)="onSearchNota(inputNota.value)"> 
+                <mat-icon matSuffix class="icon" *ngIf="!iconSpin">search</mat-icon>
+                <mat-icon matSuffix class="spin" *ngIf="iconSpin">cached</mat-icon>
+            </mat-form-field>    
+
+            <mat-form-field 
+                appearance="outline" 
+                *ngIf="notaPedido?.NOTA_PEDIDO && !notaCerradaYCompletada" 
+                class="col-md-4 animate__animated animate__fadeIn animate_faster">
+                <mat-label>Tipo de novedad</mat-label>
+                <mat-select formControlName="idNovedad" (selectionChange)="onTipoNovedadChange($event)" disableRipple>
+                    <mat-option *ngFor="let item of tiposNovedad" [value]="item.ID_TIPO_NOVEDAD">
+                        {{ item.DESCRIPCION }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field 
+                appearance="outline" 
+                *ngIf="novedadSeleccionada === 'reprogramacion' && !notaCerradaYCompletada" 
+                class="col-md-4 animate__animated animate__fadeIn animate_faster">
+                <mat-label>Causal</mat-label>
+                <mat-select formControlName="idCausal" disableRipple>
+                    <mat-option *ngFor="let item of causalesReprogramacion" [value]="item.ID">
+                        {{ item.DESCRIPCION }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </article>
+
+        <app-nota-detalle [notaPedido]="notaPedido"></app-nota-detalle>
+
+        <app-retracto *ngIf="novedadSeleccionada === 'retracto'" [notaPedido]="notaPedido"></app-retracto>
+
+        <footer 
+            class="form-footer" 
+            *ngIf="!notaCerradaYCompletada && novedadSeleccionada === 'reprogramacion'">
+            <app-spinner *ngIf="showSpinner"></app-spinner>
+            <button *ngIf="!showSpinner" mat-raised-button type="button" class="clear">Cancelar</button>
+            <button *ngIf="!showSpinner" [disabled]="!form.valid" mat-raised-button color="primary" type="submit">Crear novedad</button>
+        </footer>
+    </form>
+
+    <article *ngIf="!notaPedido?.NOTA_PEDIDO && busquedaNotaInit" class="no-results animate__animated animate__fadeIn animate_faster">
+        <p>No existe la nota pedido</p>
+    </article>
+
+    <article *ngIf="notaCerradaYCompletada" class="mt-5 no-results animate__animated animate__fadeIn animate_faster">
+        <p>
+            Esta nota pedido tiene un estado 
+            <strong>{{ notaPedido.DESC_ESTADO_SAPS }}</strong>, 
+            por tanto no se puede crear una nueva novedad
+        </p>
+    </article>
+
+</section>

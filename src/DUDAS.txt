@@ -1,0 +1,8 @@
+/*-------------------------------------------
+    DASHBOARD - Mayo 10 de 2021 ( Lunes ) 
+--------------------------------------------*/    
+
+    1. Es necesario el sidebar
+    2. Debe ser fijo o puede ser colapsable?
+    3. Que información deberá llevar el sidebar
+    

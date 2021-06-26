@@ -1,0 +1,19 @@
+<aside id="notifications-menu" [ngClass]="{'expanded': sidebarIsOpen }">
+    <nav>
+        <header>
+            <div class="title">
+                <i class="material-icons-outlined">poll</i>
+                <h2>Sidebar</h2>
+            </div>
+            <span (click)="sidebarIsOpen = !sidebarIsOpen" class="close-menu">
+                <i class="material-icons-outlined">clear</i>
+            </span>
+        </header>
+
+        <a href="#">Chart 1</a>
+        <a href="#">Chart 2</a>
+        <a href="#">Chart 3</a>
+        <a href="#">Chart 4</a>
+        <a href="#">Chart n</a>
+    </nav>
+</aside>

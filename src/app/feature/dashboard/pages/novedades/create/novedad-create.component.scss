@@ -1,0 +1,24 @@
+@import "src/colores";
+
+.no-results {
+    p {
+        margin: 0;
+        color: $gris-300;
+        text-align: center;
+    }
+}
+.spin {
+    color: $primary;
+    animation-name: spin;
+    animation-duration: 800ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

@@ -1,0 +1,56 @@
+<article *ngIf="notaPedido" class="row animate__animated animate__fadeIn animate_faster">
+
+    <ul class="key-value-menu col-md-4">
+        <li>
+            <span class="key">Nota Pedido</span>
+            <span class="value">{{ notaPedido.NOTA_PEDIDO }}</span>
+        </li>
+        <li>
+            <span class="key">Sticker</span>
+            <span class="value">{{ notaPedido.STICKER }}</span>
+        </li>
+        <li>
+            <span class="key">Estado Nota Pedido</span>
+            <span class="value">{{ notaPedido.DESC_ESTADO_SAPS }}</span>
+        </li>
+        <li>
+            <span class="key">Estado Novedad</span>
+            <span class="value">{{ notaPedido.DESC_ESTADO_PROCESO }}</span>
+        </li>
+    </ul>
+
+        
+    <ul class="key-value-menu col-md-4">    
+        <li>
+            <span class="key">Transportadora</span>
+            <span class="value">{{ notaPedido.DESC_EMP_TRANSP }}</span>
+        </li>
+        <li>
+            <span class="key">Tipo entrega</span>
+            <span class="value">{{ notaPedido.DESC_TIPO_ENTREGA }}</span>
+        </li>
+        <li>
+            <span class="key">Fecha entrega</span>
+            <span class="value">{{ notaPedido.FECHA_ENTREGA | date:'yyyy-MM-dd' }}</span>
+        </li>
+        <li>
+            <span class="key">Fecha de Creación</span>
+            <span class="value">{{ notaPedido.FECHA_CREA | date:'yyyy-MM-dd' }}</span>
+        </li>
+    </ul>
+
+    <ul class="key-value-menu col-md-4">    
+        <li>
+            <span class="key">Almacén de entrega</span>
+            <span class="value">{{ notaPedido.NOM_ALM_ENT | uppercase }}</span>
+        </li>
+        <li>
+            <span class="key">Flujo</span>
+            <span class="value">{{ notaPedido.FLUJO | uppercase }}</span>
+        </li>
+        <li>
+            <span class="key">Ciudad</span>
+            <span class="value">{{ notaPedido.CIUDAD | uppercase }}</span>
+        </li>
+    </ul>
+</article>

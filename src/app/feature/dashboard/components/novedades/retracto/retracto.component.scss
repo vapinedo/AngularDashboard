@@ -1,0 +1,16 @@
+::ng-deep .mat-form-field-infix {
+    padding: .5em 0;
+    padding-bottom: 13px;
+    border-top: .3em solid transparent;
+}
+.asw-table {
+    ::ng-deep .mat-form-field-wrapper {
+        padding: 0;
+    }
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+   padding: .7em 1em;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+}
